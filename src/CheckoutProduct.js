@@ -1,8 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './CheckoutProduct.css'
 import { useStateValue } from "./StateProvider";
 
 function CheckoutProduct({ id, image, title, price, rating }) {
+    
+    // from react router DOM
+    const history = useHistory();
+
     const [{ basket }, dispatch] = useStateValue();
 
     const removeFromBasket = () => {
